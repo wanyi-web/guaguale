@@ -1,0 +1,338 @@
+@charset "utf-8";
+
+html{
+  width: 100%;
+  height: 100%;
+}
+   
+* {
+	box-sizing: border-box;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243,82,64);
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes btngroup {
+  0% {
+    top: 1.6rem;
+    left: 37%;
+  }
+  100% {
+    top: 1.3rem;
+    left: 37%;
+  }
+}
+@keyframes link {
+  0% {
+    width: 4.5rem;
+  }
+  100% {
+    width: 5rem;
+  }
+}
+.muted {
+	width: 0.7rem;
+	height: 0.7rem;
+	position: absolute;
+	background-image: url(../image/yf2.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 999;
+	top: 0.3rem;
+	right: 0.3rem;
+	opacity: 0.7;
+	
+}
+
+.notMuted {
+	background-image: url(../image/yf.png);
+	opacity: 1;
+	display: block;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/bg.png");
+  background-size: 100% 100%;
+}
+/*三个不同的动画效果*/
+.caidai1,
+.caidai2,
+.caidai3 {
+  opacity: 1;
+  position: absolute;
+  left: 0.53333333rem;
+  top: 3.2rem;
+  width: 1.02666667rem;
+  height: 0.98666667rem;
+  background-image: url("../image/hongbao1.png");
+  -o-animation: caidai1 1s ease-in-out infinite;
+  -ms-animation: caidai1 1s ease-in-out infinite;
+  -moz-animation: caidai1 1s ease-in-out infinite;
+  -webkit-animation: caidai1 1s ease-in-out infinite;
+  animation: caidai1 1s ease-in-out infinite;
+}
+@keyframes caidai1 {
+  100% {
+    opacity: 0;
+    left: 1.86666667rem;
+    top: 4.53333333rem;
+  }
+}
+.caidai2 {
+  left: 8rem;
+  top: 1.86666667rem;
+  width: 1.26666667rem;
+  height: 1.06666667rem;
+  background-image: url("../image/hongbao2.png");
+  -o-animation: caidai2 1s ease-in-out infinite;
+  -ms-animation: caidai2 1s ease-in-out infinite;
+  -moz-animation: caidai2 1s ease-in-out infinite;
+  -webkit-animation: caidai2 1s ease-in-out infinite;
+  animation: caidai2 1s ease-in-out infinite;
+}
+@keyframes caidai2 {
+  100% {
+    opacity: 0;
+    left: 6.66666667rem;
+    top: 3.2rem;
+  }
+}
+.caidai3 {
+  left: 0;
+  top: 11.46666667rem;
+  width: 1.30666667rem;
+  height: 1.17333333rem;
+  background-image: url("../image/gold.png");
+  -o-animation: caidai3 0.5s ease-in-out infinite alternate;
+  -ms-animation: caidai3 0.5s ease-in-out infinite alternate;
+  -moz-animation: caidai3 0.5s ease-in-out infinite alternate;
+  -webkit-animation: caidai3 0.5s ease-in-out infinite alternate;
+  animation: caidai3 0.5s ease-in-out infinite alternate;
+}
+@keyframes caidai3 {
+  100% {
+    top: 12rem;
+  }
+}
+.logo{
+  width: 1.6rem;
+  display: block;
+  margin: 1rem auto;
+}
+.title{
+  width: 80%;
+  display: block;
+  margin: 1rem auto 0;
+}
+/*主体*/
+.box {
+  width: 100%;
+  position: relative;
+  height: 10.53333333rem;
+}
+.rule,
+.my {
+  position: absolute;
+  width: 2.2rem;
+  height: 0.66666667rem;
+  background-color: #e04b34;
+  text-align: center;
+  line-height: 0.66666667rem;
+  font-size: 0.29333333rem;
+  font-weight: bold;
+  color: #fff3f0;
+  border-radius: 0.26666667rem;
+}
+.rule {
+  left: 1.66666667rem;
+}
+.my {
+  right: 1.66666667rem;
+}
+/*刮刮乐图层*/
+.panel {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  background-size: 100% 100%;
+  z-index: 1;
+  margin-left: 0;
+  width: 9rem;
+  height: 7rem;
+  background-image: url("../image/box.png");
+}
+#canvas {
+  position: absolute;
+  left: 50.2%;
+  top: 64%;
+  margin: -2.05333333rem 0 0 -3.74666667rem;
+}
+#canvas-mask {
+  position: absolute;
+  left: 50.2%;
+  top: 64%;
+  z-index: 1;
+  width: 7.49333333rem;
+  height: 4.10666667rem;
+  margin: -2.05333333rem 0 0 -3.74666667rem;
+}
+#canvas-mask .canvasTitle{
+  width: 60%;
+  display: block;
+  margin: 0.5rem auto 0.7rem;
+}
+#canvas-mask #btn {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
+#canvas-mask p {
+  margin-top: 3.04rem;
+  height: 0.29333333rem;
+  text-align: center;
+  line-height: 0.29333333rem;
+  font-size: 0.29333333rem;
+  color: #fff;
+}
+/*奖品展示*/
+.awards {
+  bottom: 0.32rem;
+  margin-left: -4.66666667rem;
+  width: 9.33333333rem;
+  height: 2.33333333rem;
+  background-color: #ee3c3a;
+  border-radius: 0.26666667rem;
+}
+.awards .swiper-slide {
+  margin: 0.26666667rem 0.4rem 0;
+}
+/*规则背景色*/
+#mask-rule .box-rule {
+  background-color: #fe5c51;
+}
+#mask-rule .box-rule .star {
+  background-image: url("../common/image/rule/star2.png");
+}
+
+.model-mask{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-image: url(../image/mask.png);
+  background-size: 100% 100%;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.model-mask .rules{
+  width: 2.86rem;
+  height: 3rem;
+  position: absolute;
+  top: 1.57rem;
+  left: 0.42rem;
+}
+.model-mask .gameOver{
+  width: 3.07rem;
+  height: 2.09rem;
+  position: absolute;
+  top: 2.24rem;
+  left: 0.41rem;
+  background-size: 100% 100%;
+}
+.model-mask .again,
+.model-mask .goNext{
+  width: 1rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 1.3rem;
+}
+.model-mask .text{
+  width: 2rem;
+  line-height: 0.2rem;
+  font-size: 0.15rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+}
+.model-mask .again{
+  left: 0.34rem;
+}
+.model-mask .goNext{
+  left: 1.81rem;
+}
+.baoqiang {
+	top: 0.2rem;
+  width: 100%;
+  z-index: 3;
+  position: absolute;
+}
+.guang {
+  width: 100%;
+  animation: rotate 3s linear infinite;
+  position: absolute;
+  z-index: 0;
+}
+.title{
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 75%;
+}
+.down{
+  position: absolute;
+  width: 5.333333rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: link 0.5s alternate linear infinite;
+  top: 12.4rem;
+}
+.next{
+  position: absolute;
+  width: 5.333333rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: link 0.5s alternate linear infinite;
+  top: 14rem;
+  /*animation: link 0.5s alternate linear infinite;*/
+}
+
+.titleNum {
+	position: absolute;
+	left: 50%;
+	transform: translate(-42%, 0);
+	width: 5rem;
+	top: 9rem;
+	z-index: 5;
+}
+
+.goodsBut {
+	width: 100%;
+	height: 3rem;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>刮刮乐</title>
+		<link rel="stylesheet" href="common/css/swiper.min.css">
+		<link rel="stylesheet" href="common/css/common_mobile.css?version=1.0.0">
+		<link rel="stylesheet" href="css/index.css?version=1.0.0">
+		<script src="https://sf3-ttcdn-tos.pstatp.com/obj/union-fe-nc/playable/sdk/playable-sdk.js"></script>
+		<!-- 移动端适配 -->
+		<script>
+			var html = document.querySelector('html');
+			changeRem();
+			window.addEventListener('resize', changeRem);
+
+			function changeRem() {
+				var width = html.getBoundingClientRect().width;
+				html.style.fontSize = width / 10 + 'px';
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<audio id="bgm" class="aud" autoplay="autoplay" preload="auto" loop src="./image/bgm.mp3" style="display:none"></audio>
+		<div id="wrap">
+			<div class="caidai1"></div>
+			<div class="caidai2"></div>
+			<div class="caidai3"></div>
+			<!--游玩区域-->
+			<img class="logo" src="./image/logo.png" alt="">
+			<img class="title" src="./image/titleHeader.png" alt="">
+			<div class="box">
+				<div class="panel">
+					<canvas id="canvas" width="562" height="308"></canvas>
+					<div id="canvas-mask">
+						<img class="canvasTitle" src="./image/title.png" alt="">
+						<img id="btn" src="./image/button_03.png" alt="">
+					</div>
+				</div>
+			</div>
+			<!--中奖提示-->
+			<div class="model-mask">
+				<img class="guang" src="./image/guang.png" alt="">
+				<img class="baoqiang" src="./image/goods.png" alt="">
+				<img class="titleNum" src="./image/num_01.png" alt="">
+				<div class="goodsBut">
+					<img class="down" id="down" src="./image/button_01.png" alt="">
+					<img class="next" src="./image/button_02.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<script src="common/js/jquery.min.js"></script>
+		<script src="common/js/swiper.jquery.min.js"></script>
+		<script src="common/js/h5_game_common.js?version=1.0.0"></script>
+		<script src="js/index.js?version=1.0.0"></script>
+		<script>
+			$(".down").click(function (e) {
+				e.preventDefault();
+				window.playableSDK.openAppStore();
+			});
+		</script>
+	</body>
+</html>
